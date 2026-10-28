@@ -1,0 +1,51 @@
+.scope{
+    display: if(style(--step: "scope"): grid; else: none);
+    gap: 20px;
+}
+
+@scope (.profile){
+    :scope{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border: 2px solid;
+    }
+    img{
+        border-radius: 50%;
+        border: 3px solid var(--color-text);
+    }
+    .name{
+        font-weight: bold;
+    }
+}
+
+@scope (.post) to (.content){
+    :scope{
+        padding: 10px;
+        border: 2px solid;
+    }
+    p{
+        color: rebeccapurple;
+        font-weight: bold;
+    }
+}
+
+@scope (.theme-light){
+    :scope{
+        background: white;
+        padding: 10px;
+    }
+    p{
+        color: black;
+    }
+}
+@scope (.theme-dark){
+    :scope{
+        background: black;
+        padding: 10px;
+    }
+    p{
+        color: white;
+    }
+}

@@ -1,0 +1,49 @@
+.field-sizing{
+    display: if(style(--step: "field-sizing"): grid; else: none);
+    gap: 20px;
+
+    form{
+        display: grid;
+        gap: 20px;
+        justify-items: start;
+    }
+
+    label{
+        display: grid;
+        gap: 6px;
+    }
+
+    input,
+    textarea,
+    select{
+        font: inherit;
+        color: inherit;
+        background: transparent;
+        padding: 8px 12px;
+        border: 2px solid;
+        border-radius: 8px;
+        field-sizing: content;
+
+        &:focus-visible{
+            outline: none;
+            border-image: var(--rainbow) 1;
+        }
+    }
+
+    input{
+        min-width: 10ch;
+        max-width: 40ch;
+    }
+
+    textarea{
+        min-width: 30ch;
+        max-width: 60ch;
+        min-block-size: 3lh;
+        max-block-size: 10lh;
+        resize: none;
+    }
+
+    .fixed{
+        field-sizing: fixed;
+    }
+}

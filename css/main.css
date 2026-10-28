@@ -1,0 +1,18 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --step: "variables";
+}
+
+
+section{
+    width: 100dvw;
+    height: 100dvh;
+    place-items: center;
+    place-content: center;
+}

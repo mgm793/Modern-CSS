@@ -1,0 +1,63 @@
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+
+
+:root{
+    --dark-color: black;
+    --light-color: white;
+    --color-background: var(--dark-color);
+    --color-text: var(--light-color);
+    @media( prefers-color-scheme: light){
+        --color-background: var(--light-color);
+        --color-text: var(--dark-color);
+    }
+    
+}
+
+
+*{
+    --rainbow: linear-gradient(
+                    to right in oklch longer hue,
+                    oklch(0.8 0.2 var(--angle)),
+                    oklch(0.8 0.2 calc(var(--angle) + 360deg)));
+}
+
+body{
+    background-color: var(--color-background, darkblue);
+    color: var(--color-text, lightgray);
+}
+
+
+
+
+.variables{
+    display: if(style(--step: "variables"): grid; else: none);
+
+    .title{
+        width: fit-content;
+        rotate: var(--angle, 0deg);
+        transform-origin: center center;
+        animation: spin 5s linear infinite;
+        animation-play-state: paused;
+
+        text-transform: uppercase;
+        background-image: var(--rainbow);
+        background-clip: text;
+        color: transparent;
+
+        &:hover{
+            cursor: pointer;
+            animation-play-state: running;
+        }
+    }
+}
+
+@keyframes spin {
+    to {
+        --angle: 360deg
+    }
+}

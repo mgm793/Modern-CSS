@@ -1,0 +1,72 @@
+.nesting{
+    display: if(style(--step: "nesting"): grid; else: none);
+    gap: 20px;
+
+    .card{
+        padding: 20px;
+        border: 2px solid;
+
+        &:hover{
+            background: var(--rainbow);
+            color: var(--dark-color);
+        }
+        &.first{
+            border-style: dashed;
+        }
+        &[data-tag]::after{
+            content: " (" attr(data-tag) ")";
+        }
+
+        & p{
+            font-style: italic;
+        }
+        & > .badge{
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        & + &{
+            margin-top: 0; 
+        }
+        & ~ article{
+            border-radius: 12px;
+        }
+
+        & &{
+            border-style: dotted;   
+            margin-top: 10px;
+        }
+        .third > & {
+            background: rebeccapurple; 
+        }
+
+        article&{
+            border-width: 4px;
+        }
+
+        &&{
+            outline-offset: 4px;
+        }
+
+        :not(&) > &{
+            box-shadow: 0 0 0 1px gray; 
+        }
+        &:has(input:focus){
+            outline: 2px solid var(--color-text);
+        }
+        :where(&) .badge{
+            color: tomato;           
+        }
+
+        &:focus-within,
+        &:active{
+            scale: 1.02;
+        }
+
+        @media (width < 600px){
+            padding: 10px;
+            & p{
+                font-size: 0.875rem;
+            }
+        }
+    }
+}

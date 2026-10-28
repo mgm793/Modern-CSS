@@ -1,0 +1,49 @@
+.anchor{
+    display: if(style(--step: "anchor"): grid; else: none);
+
+    .list{
+        display: grid;
+        gap: 10px;
+        list-style: none;
+        &::before{
+            content: "->";
+            position: absolute;
+            position-anchor: --hovered-item;
+            top: anchor(center);
+            right: anchor(left);
+            translate: 0 -50%;
+            margin-right: 20px;
+            transition: top 1s ease;
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            height: 20px;
+            border: 5px solid;
+            border-image: 
+                var(--rainbow) 
+                5; 
+            padding: 20px;
+            &:hover{
+                background: var(--rainbow);
+                color: var(--dark-color);
+            }
+            &:has(input:checked){
+                anchor-name: --hovered-item;
+            }
+            &:has(input:focus-visible){
+                outline: 2px solid;
+            }
+            label{
+                cursor: pointer;
+                flex: 1;
+            }
+        }
+    }
+    input{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+}

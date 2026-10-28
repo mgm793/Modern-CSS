@@ -1,0 +1,73 @@
+.grid{
+    display: if(style(--step: "grid"): grid; else: none);
+
+    .layout{
+        display: grid;
+        width: 100%;
+        row-gap: 20px;
+        grid-template-columns:
+            [full-start] minmax(1rem, 1fr)
+            [content-start] repeat(3, [col-start] minmax(0, 220px) [col-end])
+            [content-end] minmax(1rem, 1fr)
+            [full-end];
+        column-gap: 20px;
+    }
+
+    .banner{
+        grid-column: full;
+        padding: 20px;
+        text-align: center;
+        background: var(--rainbow);
+        color: var(--dark-color);
+    }
+
+    .cards{
+        grid-column: content;
+        display: grid;
+        grid-template-columns: subgrid;
+        row-gap: 10px;
+    }
+
+    .card{
+        grid-row: span 3;
+        display: grid;
+        grid-template-rows: subgrid;
+        padding: 10px;
+        border: 2px solid;
+
+        &.wide{
+            grid-column: col-start 2 / col-end 3;
+        }
+
+        footer{
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+    }
+
+    .quote{
+        grid-column: col-start 2 / content-end;
+        padding: 10px;
+        border-inline-start: 4px solid;
+        font-style: italic;
+    }
+
+    .toolbar{
+        grid-column: content;
+        display: grid;
+        grid-template-columns: subgrid [left] [middle] [right] [end];
+
+        .start{
+            grid-column: left;
+        }
+        .actions{
+            grid-column: right / end;
+            justify-self: end;
+        }
+
+        span{
+            padding: 8px 12px;
+            border: 2px dashed;
+        }
+    }
+}

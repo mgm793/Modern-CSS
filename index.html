@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern CSS</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/progress.css" />
+    <link rel="stylesheet" href="css/has.css" />
+    <link rel="stylesheet" href="css/anchor.css" />
+    <link rel="stylesheet" href="css/nesting.css" />
+    <link rel="stylesheet" href="css/scope.css" />
+    <link rel="stylesheet" href="css/color.css" />
+    <link rel="stylesheet" href="css/field-sizing.css" />
+    <link rel="stylesheet" href="css/container.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+  </head>
+  <body>
+    <section class="variables">
+      <h1 class="title">Welcome to Modern CSS</h1>
+    </section>
+    <section class="nesting">
+      <div class="card first" data-tag="new">
+        <p>This is the first nested div.</p>
+        <span class="badge">badge</span>
+      </div>
+      <div class="card second">
+        <p>This is the second nested div.</p>
+        <input type="text" placeholder="focus me" />
+      </div>
+      <article class="card third">
+        <p>This is the third nested card (an article).</p>
+        <div class="card inner">
+          <p>Card inside a card.</p>
+        </div>
+      </article>
+    </section>
+    <section class="progress">
+      <h1 class="title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae sint vel
+        ex repellat. Debitis, temporibus aut! Pariatur ducimus amet dolorem
+        mollitia, minima deserunt eius aliquam, atque quasi, autem perspiciatis
+        eaque? Fugiat aliquam in nulla, iure esse a delectus rem placeat fuga,
+        harum, animi enim cumque autem. Sunt, laudantium unde? Blanditiis
+        dolores rem eum eius nam officiis quis praesentium enim laudantium?
+        Quasi esse autem, soluta dolores, molestias dicta ut veniam adipisci
+        aspernatur, dolor omnis nulla vitae consectetur consequatur. Enim qui
+        nemo dicta, quibusdam culpa est ipsa explicabo iste vitae obcaecati nam.
+      </h1>
+    </section>
+    <section class="has">
+      <label for="cacatua">
+        <img
+          src="assets/cacatua.png"
+          alt="cacatua"
+          class="cacatua"
+          width="200"
+        />
+      </label>
+      <input type="checkbox" name="cacatua" id="cacatua" />
+    </section>
+    <section class="anchor">
+      <form>
+        <ul class="list">
+          <li class="item">
+            <label><input type="radio" name="menu" checked /> One</label>
+          </li>
+          <li class="item">
+            <label><input type="radio" name="menu" /> Two</label>
+          </li>
+          <li class="item">
+            <label><input type="radio" name="menu" /> Three</label>
+          </li>
+          <li class="item">
+            <label><input type="radio" name="menu" /> Four</label>
+          </li>
+        </ul>
+      </form>
+    </section>
+    <section class="scope">
+      <div class="profile">
+        <img src="assets/cacatua.png" alt="cacatua" width="80" />
+        <p class="name">Cacatua</p>
+      </div>
+      <img src="assets/cacatua.png" alt="cacatua outside scope" width="80" />
+      <div class="post">
+        <p>Post text (styled)</p>
+        <div class="content">
+          <p>User content (not styled)</p>
+        </div>
+      </div>
+
+      <div class="theme-light">
+        <p>Light theme</p>
+        <div class="theme-dark">
+          <p>Dark theme inside light</p>
+          <div class="theme-light">
+            <p>Light again inside dark</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <style>
+          @scope {
+            :scope {
+              border: 2px dashed tomato;
+              padding: 10px;
+            }
+            p {
+              color: tomato;
+            }
+          }
+        </style>
+        <p>Styled by inline @scope</p>
+      </div>
+      <p>Same tag outside widget (not styled)</p>
+    </section>
+    <section class="color">
+      <div class="ramp">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="tints">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="mix">
+        <span class="srgb"></span>
+        <span class="oklch"></span>
+        <span class="oklch-longer"></span>
+      </div>
+      <label class="theme"><input type="checkbox" /> Dark mode</label>
+      <div class="panel">
+        <p>Themed with light-dark()</p>
+        <button>Action</button>
+      </div>
+    </section>
+    <section class="field-sizing">
+      <form>
+        <label>
+          Name
+          <input type="text" placeholder="grows" />
+        </label>
+        <label>
+          Fixed
+          <input type="text" class="fixed" placeholder="does not grow" />
+        </label>
+        <label>
+          Message
+          <textarea placeholder="type multiple lines"></textarea>
+        </label>
+        <label>
+          Pick
+          <select>
+            <option>Short</option>
+            <option>A much longer option</option>
+          </select>
+        </label>
+      </form>
+    </section>
+    <section class="container">
+      <div class="stage">
+        <div class="card">
+          <img src="assets/cacatua.png" alt="cacatua" />
+          <div>
+            <p class="title">Cacatua</p>
+            <p>Drag the corner to resize the container.</p>
+            <span class="badge">wide</span>
+          </div>
+        </div>
+      </div>
+      <div class="stage featured">
+        <div class="card">
+          <img src="assets/cacatua.png" alt="cacatua" />
+          <div>
+            <p class="title">Cacatua</p>
+            <p>Drag the corner to resize the container.</p>
+            <span class="badge">wide</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="grid">
+      <div class="layout">
+        <header class="banner">full-start / full-end</header>
+        <div class="cards">
+          <article class="card">
+            <h2>Short</h2>
+            <p>One line.</p>
+            <footer>col-start 1</footer>
+          </article>
+          <article class="card">
+            <h2>A much longer title that wraps</h2>
+            <p>Rows line up across cards thanks to subgrid.</p>
+            <footer>col-start 2</footer>
+          </article>
+          <article class="card">
+            <h2>Third</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <footer>col-start 3</footer>
+          </article>
+          <article class="card wide">
+            <h2>Wide</h2>
+            <p>Placed with named lines.</p>
+            <footer>col-start 2 / col-end 3</footer>
+          </article>
+        </div>
+        <blockquote class="quote">col-start 2 / content-end</blockquote>
+        <div class="toolbar">
+          <span class="start">left</span>
+          <span class="actions">right / end</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

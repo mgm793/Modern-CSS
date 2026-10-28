@@ -1,0 +1,67 @@
+.container{
+    display: if(style(--step: "container"): grid; else: none);
+    gap: 20px;
+
+    .stage{
+        container: card / inline-size;
+        width: 300px;
+        min-width: 200px;
+        max-width: 90dvw;
+        resize: horizontal;
+        overflow: hidden;
+        padding: 10px;
+        border: 2px dashed;
+
+        &.featured{
+            --featured: true;
+        }
+    }
+
+    .card{
+        display: grid;
+        gap: 10px;
+        padding: 10px;
+        border: 2px solid;
+
+        img{
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        .title{
+            font-size: clamp(1rem, 6cqi, 2.5rem);
+        }
+
+        .badge{
+            display: none;
+            width: fit-content;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border: 1px solid;
+        }
+    }
+
+    @container card (width >= 400px){
+        .card{
+            grid-template-columns: 30cqi 1fr;
+            align-items: center;
+        }
+    }
+
+    @container card (width >= 600px){
+        .card{
+            .badge{
+                display: block;
+            }
+        }
+    }
+
+    @container style(--featured: true){
+        .card{
+            border-image: var(--rainbow) 1;
+        }
+    }
+}

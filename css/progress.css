@@ -1,0 +1,9 @@
+.progress{
+    display: if(style(--step: "progress"): grid; else: none);
+    .title{
+        --p: progress(100vw, 320px, 1200px);
+        font-size: calc(1.2rem + 1.5rem * var(--p));
+        padding-block: calc(1rem + 4rem * var(--p));
+        padding-inline: 5rem;
+    }
+}

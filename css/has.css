@@ -1,0 +1,14 @@
+.has{
+    display: if(style(--step: "has"): grid; else: none);
+    .cacatua{
+        width: 200px;
+        cursor: pointer;
+        label:has(+ #cacatua:checked) & {
+            filter: hue-rotate(70deg);
+        }
+    }
+
+    #cacatua{
+        display: none;
+    }
+}
