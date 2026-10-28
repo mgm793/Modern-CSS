@@ -11,7 +11,7 @@
     --light-color: white;
     --color-background: var(--dark-color);
     --color-text: var(--light-color);
-    @media( prefers-color-scheme: light){
+    @media(prefers-color-scheme: light){
         --color-background: var(--light-color);
         --color-text: var(--dark-color);
     }
