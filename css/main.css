@@ -4,15 +4,68 @@
     box-sizing: border-box;
 }
 
+.deck{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 
-:root{
-    --step: "variables";
+    scroll-marker-group: after;
+
+    &::scroll-button(*){
+        position: fixed;
+        bottom: 1.5rem;
+        padding: 0.5rem 1rem;
+        border: 3px solid currentColor;
+        border-radius: 100vh;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+    }
+    &::scroll-button(*):disabled{
+        opacity: 0.5;
+        cursor: default;
+    }
+    &::scroll-button(left){
+        content: "←" / "Previous slide";
+        left: 1.5rem;
+    }
+    &::scroll-button(right){
+        content: "→" / "Next slide";
+        right: 1.5rem;
+    }
+
+    &::scroll-marker-group{
+        position: fixed;
+        bottom: 2rem;
+        left: 50%;
+        translate: -50% 0;
+        display: flex;
+        gap: 0.5rem;
+    }
 }
 
-
 section{
+    flex: 0 0 100dvw;
     width: 100dvw;
     height: 100dvh;
+    overflow-y: auto;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
     place-items: center;
     place-content: center;
+
+    &::scroll-marker{
+        content: "";
+        color: white;
+        width: 0.6rem;
+        height: 0.6rem;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+    }
+    &::scroll-marker:target-current{
+        background: currentColor;
+    }
 }

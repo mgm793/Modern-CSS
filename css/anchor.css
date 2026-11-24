@@ -1,5 +1,5 @@
 .anchor{
-    display: if(style(--step: "anchor"): grid; else: none);
+    display: grid;
 
     .list{
         display: grid;

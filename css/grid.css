@@ -1,5 +1,5 @@
 .grid{
-    display: if(style(--step: "grid"): grid; else: none);
+    display: grid;
 
     .layout{
         display: grid;

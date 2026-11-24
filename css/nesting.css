@@ -1,5 +1,5 @@
 .nesting{
-    display: if(style(--step: "nesting"): grid; else: none);
+    display: grid;
     gap: 20px;
 
     .card{

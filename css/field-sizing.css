@@ -1,5 +1,5 @@
 .field-sizing{
-    display: if(style(--step: "field-sizing"): grid; else: none);
+    display: grid;
     gap: 20px;
 
     form{

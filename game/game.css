@@ -1,0 +1,153 @@
+@property --px {
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 1;
+}
+@property --py {
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 1;
+}
+
+@keyframes move-x {
+    from { --px: 1; }
+    to   { --px: 20; }
+}
+@keyframes move-y {
+    from { --py: 1; }
+    to   { --py: 20; }
+}
+
+.game {
+    --size: 20;
+    --step: 3rem;
+    display: grid;
+    gap: 1rem;
+    justify-content: start;
+
+    timeline-scope: --sx, --sy;
+
+    .game-board {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(var(--size), 50px);
+        grid-template-rows: repeat(var(--size), 50px);
+        animation: move-x linear both, move-y linear both;
+        animation-timeline: --sx, --sy;
+
+        .grass {
+            background-image: url(../assets/grass.png);
+        }
+        .rock {
+            background-image: url(../assets/rock.png);
+        }
+        .coin {
+            background-image: url(../assets/coin.png);
+        }
+
+        .rock {
+            --i: calc(sibling-index() - 1);
+            --dx: calc(mod(var(--i), var(--size)) + 1 - var(--px));
+            --dy: calc(round(down, var(--i) / var(--size)) + 1 - var(--py));
+
+            &::after {
+                content: "";
+                position: fixed;
+                position-anchor: --pad;
+                width: var(--step);
+                height: var(--step);
+                left: calc(anchor(center) + var(--dx) * (var(--step) + 0.25rem) - var(--step) / 2);
+                top: calc(anchor(center) + var(--dy) * (var(--step) + 0.25rem) - var(--step) / 2);
+                border-radius: 0.5rem;
+                opacity: 0.7;
+                scale: calc(1 - min(1, abs(abs(var(--dx)) + abs(var(--dy)) - 1)));
+            }
+        }
+        .player {
+            width: 50px;
+            height: 50px;
+            grid-column: var(--px);
+            grid-row: var(--py);
+            position: absolute;
+            inset: 0;
+            background-color: purple;
+            border-radius: 50%;
+        }
+    }
+
+    .controllers {
+        display: grid;
+        grid-template-areas:
+            ".    up   ."
+            "left pad  right"
+            ".    down .";
+        grid-template-columns: repeat(3, var(--step));
+        grid-template-rows: repeat(3, var(--step));
+        gap: 0.25rem;
+    }
+
+    .pad {
+        grid-area: pad;
+        anchor-name: --pad;
+        overflow: scroll;
+        scrollbar-width: none;
+        scroll-snap-type: both mandatory;
+        scroll-timeline: --sx x, --sy y;
+        border: 1px dashed currentColor;
+        border-radius: 0.5rem;
+
+        &:focus-visible {
+            outline: 3px solid yellow;
+            outline-offset: 2px;
+        }
+
+        .track {
+            display: grid;
+            width: calc(var(--size) * var(--step));
+            height: calc(var(--size) * var(--step));
+        }
+
+        .cols,
+        .rows {
+            grid-area: 1 / 1;
+            display: grid;
+        }
+        .cols {
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            > * { scroll-snap-align: none start; }
+        }
+        
+        .start {
+            grid-area: 1 / 1;
+            width: var(--step);
+            height: var(--step);
+            margin-left: calc(var(--step) * 1);
+            margin-top: calc(var(--step) * 1);
+            scroll-snap-align: start;
+            scroll-initial-target: nearest;
+        }
+        .rows {
+            grid-auto-rows: 1fr;
+            > * { scroll-snap-align: start none; }
+        }
+
+        &::scroll-button(*) {
+            display: grid;
+            place-items: center;
+            border: 1px solid currentColor;
+            border-radius: 0.5rem;
+            background: none;
+            color: inherit;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        &::scroll-button(*):disabled {
+            visibility: hidden;
+        }
+        &::scroll-button(up)    { content: "↑" / "Up";    grid-area: up; }
+        &::scroll-button(down)  { content: "↓" / "Down";  grid-area: down; }
+        &::scroll-button(left)  { content: "←" / "Left";  grid-area: left; }
+        &::scroll-button(right) { content: "→" / "Right"; grid-area: right; }
+    }
+}

@@ -35,7 +35,7 @@ body{
 
 
 .variables{
-    display: if(style(--step: "variables"): grid; else: none);
+    display: grid;
 
     .title{
         width: fit-content;

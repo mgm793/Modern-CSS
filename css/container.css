@@ -1,5 +1,5 @@
 .container{
-    display: if(style(--step: "container"): grid; else: none);
+    display: grid;
     gap: 20px;
 
     .stage{

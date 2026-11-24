@@ -1,5 +1,5 @@
 .has{
-    display: if(style(--step: "has"): grid; else: none);
+    display: grid;
     .cacatua{
         width: 200px;
         cursor: pointer;

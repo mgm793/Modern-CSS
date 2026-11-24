@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./game.css" />
+    <title>Marc Game TM</title>
+  </head>
+  <body>
+    <main class="game">
+      <div class="game-board">
+        <!-- First row  -->
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Second row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Third row  -->
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Fourth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Fifth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Sixth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Seventh row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Eighth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Ninth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Tenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Eleventh row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Twelfth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Thirteenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Fourteenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Fifteenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Sixteenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Seventeenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Eighteenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell grass"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <!-- Nineteenth row  -->
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell grass"></div>
+        <div class="cell coin"></div>
+        <div class="cell rock"></div>
+        <!-- Twentieth row  -->
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="cell rock"></div>
+        <div class="player"></div>
+      </div>
+      <div class="controllers">
+        <div
+          class="pad"
+          tabindex="0"
+          autofocus
+          aria-label="Move player with arrow keys"
+        >
+          <div class="track">
+            <i class="start"></i>
+            <div class="cols">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+            <div class="rows">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
